@@ -24,6 +24,7 @@
   # System limits and optimizations
   systemd = {
     services.sshd.wantedBy = lib.mkForce [ "multi-user.target" ];
+    network.wait-online.enable = false;  # Accelerate boot time
     extraConfig = ''
       DefaultLimitNOFILE=102400
     '';

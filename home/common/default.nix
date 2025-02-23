@@ -11,8 +11,8 @@
 
     git = {
       enable = true;
-      userName = "knb";
-      userEmail = "knb@example.com";
+      userName = "palafin";
+      userEmail = "palafin@gear4ai.com";
       extraConfig = {
         init.defaultBranch = "main";
         pull.rebase = true;

@@ -7,6 +7,7 @@
     ../../modules/system/fonts.nix
     ../../modules/system/i18n.nix
     ../../modules/system/security.nix
+    ../../modules/system/packages.nix
   ];
 
   system.stateVersion = "24.11";

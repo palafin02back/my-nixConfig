@@ -1,9 +1,17 @@
 {config, pkgs, ...}: {
-  services.xserver = {
-    enable = true;
-    xkb.layout = "us";
-    desktopManager.gnome.enable = true;
-    displayManager.gdm.enable = true;
+  services = {
+    xserver = {
+      enable = true;
+      xkb.layout = "us";
+      desktopManager.gnome.enable = true;
+      displayManager.gdm.enable = true;
+    };
+
+    xrdp = {
+      enable = true;
+      defaultWindowManager = "gnome-session";
+      openFirewall = true;
+    };
   };
 
   # GNOME packages
