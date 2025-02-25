@@ -12,21 +12,14 @@
         htop
         intel-gpu-tools
         glxinfo
+        libva-utils
+        pciutils
         
-        # Development tools
-        gcc
-        gnumake
-        
-        # # Hardware support
-        # intel-media-driver
-        # intel-compute-runtime
-        # vaapiIntel
-        # vaapiVdpau
-        # libvdpau-va-gl
+        # Hardware support and drivers
+        mesa
+        libdrm
         
         # Desktop applications
         firefox
-        
-
     ];
 } 

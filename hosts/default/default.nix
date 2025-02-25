@@ -10,6 +10,9 @@
     ../../modules/system/packages.nix
   ];
 
+  # 允许非自由软件
+  nixpkgs.config.allowUnfree = true;
+
   system.stateVersion = "24.11";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -21,11 +24,24 @@
     earlySetup = true;
   };
 
-  # Enable zsh
-  programs.zsh.enable = true;
+  # Enable zsh with global configuration
+  programs.zsh = {
+    enable = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
+    ohMyZsh = {
+      enable = true;
+      theme = "robbyrussell";
+      plugins = [ "git" "docker" "docker-compose" ];
+    };
+  };
 
   # Add user groups
-  users.groups.knb = {};
+  users.groups = {
+    knb = {};
+    render = {gid = 104; };
+    video = { gid = 44; };
+  };
 
   # Configure users
   users = {

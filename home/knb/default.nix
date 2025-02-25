@@ -15,21 +15,11 @@
       ripgrep  # Better grep
       fd       # Better find
       tree     # Directory structure viewer
-      
-      # Version control
-      git-lfs
-      git-crypt
-      
+    
       # Text processing
       jq       # JSON processor
       yq       # YAML processor
       
-      # Network tools
-      httpie   # HTTP client
-      
-      # System monitoring (user level)
-      bottom   # System monitor
-      duf      # Disk usage
     ];
   };
 

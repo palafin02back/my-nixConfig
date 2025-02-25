@@ -1,27 +1,15 @@
 {config, lib, pkgs, ...}: {
-  hardware = {
-    graphics  = {
-      enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
-      extraPackages = with pkgs; [
-        intel-media-driver
-        intel-compute-runtime
-        vaapiIntel
-        vaapiVdpau
-        libvdpau-va-gl
-      ];
-    };
+
+  # X Server 配置
+  services.xserver = {
+    enable = true;
+    videoDrivers = [ "modesetting" ];
   };
 
-  # Proxmox LXC specific settings
+  # LXC 容器配置
   proxmoxLXC = {
     privileged = true;
     manageNetwork = true;
     manageHostName = false;
   };
-  environment.systemPackages = with pkgs; [
-    intel-gpu-tools
-    glxinfo
-  ];
 }

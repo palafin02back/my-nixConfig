@@ -1,0 +1,59 @@
+---
+description: This file contains rules for the AI when editing .nix files in this project, which are configuration files for the NixOS operating system.
+globs: *.nix
+---
+### Instructions for AI
+
+When editing .nix files in this project, please keep the following in mind:
+
+1. **Language and Syntax:**
+   - All code must be in the Nix language.
+   - Ensure that the syntax is correct, including proper use of curly braces, quotes, and semicolons where necessary.
+
+2. **Configuration Structure:**
+   - The file should return a set of configuration options.
+   - Use the `config` attribute to set options.
+   - For example:
+     ```nix
+     { config, pkgs, ... }:
+     {
+       networking.hostName = "my-machine";
+       # other options
+     }
+     ```
+
+3. **Best Practices:**
+   - Write clean, readable code with comments explaining complex parts.
+   - Avoid hardcoding sensitive information; use mechanisms like age or sops for secrets.
+   - Modularize the configuration by importing other .nix files for different components.
+   - Ensure that the configuration is testable, possibly by using `nixos-rebuild dry-activate`.
+
+4. **Common Options:**
+   - Familiarize yourself with common configuration options such as `networking`, `boot`, `services`, `users`, and `packages`.
+   - Refer to the official NixOS documentation for accurate and up-to-date information.
+
+5. **Error Handling:**
+   - When generating code, consider potential errors or misconfigurations and provide warnings or comments about them.
+
+6. **Code Reviews:**
+   - Assume that the code will be reviewed by other developers, so make sure it is well-documented and follows standard practices.
+
+### Additional Context
+
+- **Nix Language Basics:**
+  - Nix is a purely functional language with a focus on configuration and package management.
+  - Key concepts include expressions, functions, lists, and attributes.
+
+- **NixOS Configuration Options:**
+  - The options are extensive and can be found in the official NixOS documentation [NixOS Manual](mdc:https:/nixos.org/manual/nixos/stable).
+  - Common sections include `boot`, `networking`, `services`, `users`, and `packages`.
+
+- **Modular Configuration:**
+  - Use `imports` to include other configuration files.
+  - Define modules for reusable configurations.
+
+- **Testing:**
+  - Use `nixos-rebuild dry-activate` to test configurations without applying them.
+  - Verify specific options or settings to ensure correctness.
+
+By following these guidelines, you can ensure that the .nix files are correct, maintainable, and align with the best practices of the NixOS community.
