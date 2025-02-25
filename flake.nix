@@ -23,7 +23,7 @@
           modules = [
             ./hosts/default
             #./modules/system
-            nixos-hardware.nixosModules.aoostar-r1-n100
+            nixos-hardware.nixosModules.aoostar-r1-n100;
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
