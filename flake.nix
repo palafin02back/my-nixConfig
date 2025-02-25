@@ -11,7 +11,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nixos-hardware ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -23,7 +23,7 @@
           modules = [
             ./hosts/default
             #./modules/system
-            nixos-hardware.nixosModules.aoostar-r1-n100;
+            nixos-hardware.nixosModules.aoostar-r1-n100
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
