@@ -5,6 +5,7 @@
       xkb.layout = "us";
       desktopManager.gnome.enable = true;
       displayManager.gdm.enable = true;
+      videoDrivers = [ "modesetting" ];
     };
 
     xrdp = {
@@ -16,7 +17,7 @@
 
   # GNOME packages
   environment.systemPackages = with pkgs; [
-    gnome.gnome-tweaks
+    gnome-tweaks
     gnome-backgrounds
     gnome-color-manager
     gnome-shell-extensions
